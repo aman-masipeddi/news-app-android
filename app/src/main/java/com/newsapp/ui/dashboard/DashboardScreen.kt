@@ -60,11 +60,10 @@ fun DashboardScreen(
 
     SwipeRefresh(
         state = swipeRefreshState,
-        onRefresh = { viewModel.refreshNews() } // Function to refresh data
+        onRefresh = { viewModel.refreshNews() }
     ) {
         Surface(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.fillMaxSize()) {
-                // Search Bar
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
@@ -74,11 +73,10 @@ fun DashboardScreen(
                         .padding(16.dp)
                         .focusRequester(focusRequester),
                     keyboardOptions = KeyboardOptions.Default.copy(
-                        imeAction = ImeAction.Done // This will show the "Done" action button on the keyboard
+                        imeAction = ImeAction.Done
                     ),
                     keyboardActions = KeyboardActions(
                         onDone = {
-                            // Hide keyboard when the user presses "Done"
                             keyboardController?.hide()
                             viewModel.onSearchSubmit(searchQuery)
                             focusManager.clearFocus()
@@ -144,7 +142,6 @@ fun NewsArticleItem(article: NewsArticle, navController: NavController) {
             .padding(16.dp)
             .fillMaxWidth()
             .clickable {
-                // Navigate to the details screen with article details
                 val encodedImageUrl = if (article.urlToImage != null) {
                     URLEncoder.encode(article.urlToImage, "UTF-8")
                 } else {

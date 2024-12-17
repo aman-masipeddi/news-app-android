@@ -31,8 +31,6 @@ class NewsApplication: Application() {
         super.onCreate()
         Log.d("TAG", "Application Started")
         NetworkUtils.init(applicationContext)
-        // Optional: Add any application-wide initialization
-        // For example, logging, analytics, etc.
     }
 }
 

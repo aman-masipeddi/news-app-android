@@ -13,7 +13,7 @@ class NewsRepository @Inject constructor(
 
     }
 
-    suspend fun getArticle(query: String) : Resource<List<NewsArticle>> {
+    suspend fun getArticle(query: String): Resource<List<NewsArticle>> {
         return remoteDataSource.getArticles(query = query)
     }
 }

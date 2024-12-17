@@ -80,7 +80,6 @@ fun ArticleDetailScreen(
                         .fillMaxSize()
                         .padding(16.dp)
                 ) {
-                    // Title
                     Text(
                         text = title,
                         style = MaterialTheme.typography.h6,
@@ -88,7 +87,6 @@ fun ArticleDetailScreen(
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
 
-                    // Article Image
                     AsyncImage(
                         model = articleImageUrl,
                         contentDescription = title,
@@ -97,28 +95,24 @@ fun ArticleDetailScreen(
                             .height(200.dp)
                     )
 
-                    // Publication Date
                     Text(
                         text = "Published on: ${formatDateISO(publishedAt, dateOutputFormat)}",
                         style = MaterialTheme.typography.subtitle1,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
 
-                    // Source
                     Text(
                         text = "Source: $source",
                         style = MaterialTheme.typography.subtitle2,
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
 
-                    // Description
                     Text(
                         text = description,
                         style = MaterialTheme.typography.body1,
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
 
-                    // "More" Button to open article in browser
                     TextButton(
                         onClick = {
                             CustomAnalytics.logEvent("article_opened",  Bundle().apply {

@@ -4,14 +4,6 @@ import java.time.format.DateTimeFormatter
 const val dateOutputFormat = "dd MMM yyyy, hh:mm a"
 object DateUtils {
 
-    /**
-     * Formats a date string from one format to another.
-     *
-     * @param dateStr The input date string.
-     * @param inputFormat The format of the input date string.
-     * @param outputFormat The desired format of the output date string.
-     * @return The formatted date string, or an error message if parsing fails.
-     */
     fun formatDateISO(
         dateStr: String,
         outputFormat: String
